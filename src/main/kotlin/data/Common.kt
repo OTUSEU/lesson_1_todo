@@ -13,13 +13,14 @@ enum class Priority {
 /**
  * Сам класс задачи с полями
  */
-data class Task(val id: Int? = null, val name: String, var priority: Priority, var completed: Boolean = false) {
+data class Task(var id: Int? = null, val name: String, var priority: Priority, var completed: Boolean = false) {
     override fun toString(): String = ("$id. [${if (completed) "x" else " "}] $name : ${priority}")
 }
 /**
  * abstract class TasksRepository реализуется в TasksRepositoryMemory
  * Котлин рекомендует через interface
  * хорошо для тестирования на подмену Repository
+ * Слой общения с БД
  */
 abstract class TasksRepository {
     abstract fun getTasks(completed: Boolean = true): List<Task>

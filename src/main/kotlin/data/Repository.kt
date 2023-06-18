@@ -1,8 +1,12 @@
 package data
+
+import org.springframework.stereotype.Component
+
 /**
  * abstract class TasksRepository здесь реализуется
  * Котлин рекомендует через interface
  */
+@Component
 class TasksRepositoryMemory : TasksRepository() {
     // сама типа "БАЗА" задач, как-бы - имитация в mutableList
     val tasks = mutableListOf<Task>()
