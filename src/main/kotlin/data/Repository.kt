@@ -23,9 +23,10 @@ class TasksRepositoryMemory : TasksRepository() {
      * иначе полный список задач
      */
     override fun getTasks(completed: Boolean): List<Task> {
-        var filteredTasks = tasks.toList()
-        if (!completed) filteredTasks = filteredTasks.filter { !it.completed }
-        return filteredTasks
+        return tasks.filter { it.completed == completed }
+//        var filteredTasks = tasks.toList()
+//        if (!completed) filteredTasks = filteredTasks.filter { !it.completed }
+//        return filteredTasks
     }
     /**
      * Добавить задачу с очередным номером = последний + 1
