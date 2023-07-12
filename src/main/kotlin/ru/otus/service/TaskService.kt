@@ -29,7 +29,7 @@ class TaskService(private val taskRepo: TasksRepository) {
         }?: TaskNotFoundExeption()
     }
 
-    fun completeTask(id: Int){
+    fun completeTask(id: Int): Task{
         if (id < 0) {
             throw InvalidTaskExeption()
         }
@@ -39,9 +39,10 @@ class TaskService(private val taskRepo: TasksRepository) {
         taskRepo.getTasks(false).find { it.id == id }?.let {
             taskRepo.completeTask(id)
         }?: TaskNotFoundExeption()
+        return taskRepo.getTasks(true).find { it.id == id }!!
     }
 
-    fun uncompleteTask(id: Int){
+    fun uncompleteTask(id: Int): Task {
         if (id < 0) {
             throw InvalidTaskExeption()
         }
@@ -51,6 +52,7 @@ class TaskService(private val taskRepo: TasksRepository) {
         taskRepo.getTasks(false).find { it.id == id }?.let {
             taskRepo.completeTask(id)
         }?: TaskNotFoundExeption()
+        return taskRepo.getTasks(false).find { it.id == id }!!
     }
 
     fun getTasks(completed: Boolean): List<Task> {

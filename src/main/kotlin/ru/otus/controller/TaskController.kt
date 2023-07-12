@@ -34,16 +34,14 @@ class TaskController(private  val taskService: TaskService) {
 //    }
     @PutMapping("/{id}")
     fun changeTaskStatus(@PathVariable id: Int, @RequestParam status:Boolean): Task {
-    //return
-      if (status) {
-        taskService.completeTask(id)
-    } else taskService.uncompleteTask(id)
-    return taskService.getTasks(true)[0]  //***
+    return if (status)
+             taskService.completeTask(id)
+     else   taskService.uncompleteTask(id)
 }
 
     @GetMapping
     fun getTask(@RequestParam("status") status:Boolean ): List<Task> {
-        return taskService.getTasks(true) //***
+        return taskService.getTasks(status)
     }
 
 
