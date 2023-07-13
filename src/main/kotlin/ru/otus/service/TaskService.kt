@@ -1,12 +1,13 @@
 package ru.otus.service
 
-import data.Task
-import data.TasksRepository
+import ru.otus.data.Task
+import ru.otus.data.TasksRepositoryMemory
 import org.springframework.stereotype.Service
 import ru.otus.http.error.*
 
 @Service
-class TaskService(private val taskRepo: TasksRepository) {
+//class TaskService(private val taskRepo: TasksRepository) {
+class TaskService(private val taskRepo: TasksRepositoryMemory) {
 
     fun addTask(task:Task) : Task {
         if (task.completed) {

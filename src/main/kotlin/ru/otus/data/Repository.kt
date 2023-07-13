@@ -1,4 +1,4 @@
-package data
+package ru.otus.data
 
 import org.springframework.stereotype.Component
 

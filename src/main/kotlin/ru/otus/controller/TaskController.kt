@@ -1,6 +1,6 @@
 package ru.otus.controller
 
-import data.Task
+import ru.otus.data.Task
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable

@@ -1,4 +1,4 @@
-import data.TasksRepositoryMemory
+import ru.otus.data.TasksRepositoryMemory
 import menu.Actions
 import menu.taskActions
 /**

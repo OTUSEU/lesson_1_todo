@@ -1,4 +1,4 @@
-package data
+package ru.otus.data
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
@@ -40,3 +40,12 @@ abstract class TasksRepository {
     abstract fun completeTask(id: Int)
     abstract fun uncompleteTask(id: Int)
 }
+
+//@Repository
+//interface TasksRepository {
+//    fun getTasks(completed: Boolean = true): List<Task>
+//    fun addTask(task: Task): Int
+//    fun deleteTask(id: Int)
+//    fun completeTask(id: Int)
+//    fun uncompleteTask(id: Int)
+//}

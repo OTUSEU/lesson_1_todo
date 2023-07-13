@@ -4,9 +4,9 @@ package menu
  * функции вызываются прямо из main (хитрым способом через enum и map)
  * taskActions[menu.Actions.values()[action - 1]]?.call(repository)
  */
-import data.Priority
-import data.Task
-import data.TasksRepository
+import ru.otus.data.Priority
+import ru.otus.data.Task
+import ru.otus.data.TasksRepository
 import kotlin.system.exitProcess
 /**
  * 1- "Add task" --> menu.Actions.ADD_TASK to ::addTaskFromMenu
